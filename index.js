@@ -56,7 +56,12 @@ function watchForm() {
     event.preventDefault();
     const statesGiven = $('#js-search-term').val().split(", ");
     const maxResults = $('#js-max-results').val();
-    getPark(statesGiven, maxResults);
+    if (maxResults >= 1) {
+      getPark(statesGiven, maxResults);
+    } else {
+      $('#js-error-message').text(`Negative number not accepted. Please put a positive number.`);
+    }
+    
   });
 }
 
