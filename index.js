@@ -13,6 +13,7 @@ function formatQueryParams(params) {
 function displayResults(responseJson) {
   // if there are previous results, remove them
   console.log(responseJson);
+  $("#js-error-message").empty();
   $('#results-list').empty();
   // iterate through the items array
   for (let i = 0; i < responseJson.data.length; i++){
