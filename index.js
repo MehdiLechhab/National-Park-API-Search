@@ -56,10 +56,10 @@ function watchForm() {
     event.preventDefault();
     const statesGiven = $('#js-search-term').val().split(", ");
     const maxResults = $('#js-max-results').val();
-    if (maxResults >= 1) {
+    if (maxResults >= 1 && maxResults <= 100) {
       getPark(statesGiven, maxResults);
     } else {
-      $('#js-error-message').text(`Negative number not accepted. Please put a positive number.`);
+      $('#js-error-message').text(`Number not accepted. Try again`);
     }
     
   });
